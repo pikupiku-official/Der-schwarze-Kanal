@@ -326,40 +326,44 @@ footer {
         flex-direction: row;
         text-align: center;
         position: relative;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
     }
 
     .site-branding {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         margin-bottom: 0;
+        max-width: 75%;
     }
 
     .site-title {
         display: flex;
         align-items: center;
-        justify-content: center;
-        font-size: 2.2rem;
+        justify-content: flex-start;
+        font-size: 1.8rem; /* フォントサイズをさらに小さく */
+        white-space: nowrap; /* 改行しないように強制 */
+        overflow: hidden; /* はみ出した部分を隠す */
+        text-overflow: ellipsis; /* 必要に応じて省略記号を表示 */
     }
 
     .site-title h1 {
         margin-bottom: 0;
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 
     .logo-container {
         height: auto;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         margin-bottom: 0;
     }
 
     .logo-img {
-        height: 40px;
-        width: 40px;
-        margin-right: 20px; /* ここを増やしてアイコンとタイトルの間のスペースを広げる */
+        height: 35px; /* サイズを少し小さく */
+        width: 35px;
+        margin-right: 15px; /* マージンを増やして空白を確保 */
         background-color: #D72511;
         display: flex;
         justify-content: center;
@@ -373,10 +377,11 @@ footer {
     }
 
     .menu-container {
-        position: absolute;
-        top: 50%;
-        right: 15px;
-        transform: translateY(-50%);
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        flex-shrink: 0; /* ハンバーガーメニューのサイズを維持 */
     }
 
     .news-title {
@@ -386,7 +391,7 @@ footer {
 
 @media (max-width: 480px) {
     .site-title {
-        font-size: 2rem;
+        font-size: 1.5rem; /* さらに小さなスクリーン用にフォントサイズをより小さく */
     }
 
     .site-subtitle {
